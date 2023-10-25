@@ -1,7 +1,7 @@
 {
     "scripts": {
         "start": "concurrently \"cd server && node server.js\" \"cd client && npm start\"",
-        "heroku-postbuild": "cd client && npm install && npm run build"
+        "frontBuild": "cd client && npm install && npm run build"
     },
     "dependencies": {
         "axios": "^1.5.1",
