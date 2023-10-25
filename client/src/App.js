@@ -1,6 +1,5 @@
 import './App.css';
 import { useState } from "react";
-const serverPort = 8082;
 
 function App() {
   const [country, setCountry] = useState("");
@@ -11,9 +10,9 @@ function App() {
   }
 
   const keyDownHandler = async (event) => {
-    if(event.key == "Enter") {
+    if(event.key === "Enter") {
       try{
-        const response = await fetch('http://localhost:'+serverPort+"/"+country); 
+        const response = await fetch("/api/"+country); 
         var fetchedData = await response.json();
         setData(fetchedData);
       } catch (error) {
