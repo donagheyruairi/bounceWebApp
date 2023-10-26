@@ -8,21 +8,151 @@
   border-radius: 1vw;
   box-shadow: -1vh 0vh 20vh black;
   align-items: center;
-  
 }
 
 h1 {
   text-align: center;
 }
 
+h4 {
+  margin: 0%;
+}
+
 input {
-  position: relative;
+  position: absolute;
   width: 70%;
+  top:12%;
   left: 15%;
   border: 2px solid black;
   font-size: calc(3vh);
 }
 
-p {
+#blankDisplay {
+  position: relative;
+  top: 6%;
   text-align: center;
+}
+
+.dataSection{
+  position: absolute;
+  height: 75%;
+  width: 80%;
+  top: 17%;
+  left: 10%;
+  margin-top: 1%;
+}
+
+.textSection{
+  position: relative;
+  height: 100%;
+  width: 45%;
+  margin-right: 5%;
+}
+
+.countryDetails{
+  position: absolute;
+  height: 23%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flagContainer{
+  position: relative;
+  height: 100%;
+  width: 45%;
+  left: 0%;
+  margin-right: 2%;
+  box-shadow: -1px 0px 12px black;
+}
+
+.flagImage{
+  height: 100%;
+  width: 100%;
+}
+
+.placeNames{
+  position: relative;
+  height: 100%;
+  width: 52%;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.placeNames h3{
+  margin: 0%;
+}
+
+.textDetails {
+  height: 90%;
+  width: 52%;
+}
+
+.factSection {
+  position: absolute;
+  height: 74%;
+  width: 100%;
+  top: 26%;
+}
+
+.factSection h4 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.factSection h3 {
+  margin-top: 2%;
+  margin-bottom: 0%;
+}
+
+.capitals {
+  padding: 0%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.weatherSection {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0%;
+  left: 50%;
+}
+
+.weatherSection h4 {
+  text-align: center;
+}
+
+.weatherModules {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  top: 10%;
+  left: 0%;
+}
+
+.weatherModule {
+  color: lightcyan;
+  width: 100%;
+  height: 18.5%;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 1%;
+  margin-top: 0.2%;
+  box-shadow: 0vh 0vh 1vh #111111;
+  background-image: url("./rainy.jpg");
+}
+
+.weatherModuleDry{
+  color: lightcyan;
+  width: 100%;
+  height: 18.5%;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 1%;
+  margin-top: 0.2%;
+  box-shadow: 0vh 0vh 1vh #111111;
+  background-image: url("./sunny.jpg");
 }
