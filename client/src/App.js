@@ -1,6 +1,11 @@
 import './App.css';
 import { useState } from "react";
 
+/**
+ * Component used to graphically represent a single days weather
+ *
+ * @param {JSON} data - Prop containing day(ID), rain, wind, and temp fields
+ */
 function WeatherDay(data) {
   return (
     data.rain === true ?(
@@ -18,15 +23,20 @@ function WeatherDay(data) {
   ));
 }
 
+// Main App functionality
 function App() {
   const [country, setCountry] = useState("");
+  // Stores fetched country data
   const [data, setData] = useState(null);
+  // Stores fetched weather data
   const [weather, setWeather] = useState(null);
 
+  // Updates country input variable
   const changeHandler = (event) => {
     setCountry(event.target.value);
   }
 
+  // On enter key, fetch data for current input country 
   const keyDownHandler = async (event) => {
     if(event.key === "Enter") {
       try{
@@ -42,27 +52,37 @@ function App() {
 
   return (
     <div className="App">
+
+      {/* This is our central content area*/}
       <div className="central">
+        
         <h1>Welcome to the Internship Application Country App</h1>
         <input type="text" placeholder="Enter country here" value={country} onChange={changeHandler} onKeyDown={keyDownHandler}></input>
+        
+        {/* This displays if no fetched data*/}
         { data == null &&
           <h3 id='blankDisplay'>This area seems pretty empty. Search for a country so we can show some data!</h3>
         }
+
+        {/* This displays if there is fetched data*/}
         { data != null &&
           <div className="dataSection">
 
             <div className='textSection' >
+
               <div className="countryDetails">
                 <div className="flagContainer">
                   <img className="flagImage" src={data.flags.png} alt={data.flags.alt}></img>
                 </div>
-                <div className="placeNames">  
-                    <h3>{data.name.common}</h3>
-                    <h3><i>{data.name.official}</i></h3>
+                <div className="placeNames">
+                  <h3>{data.name.common}</h3>
+                  <h3><i>{data.name.official}</i></h3>
                 </div>
               </div>
 
               <div className='factSection'>
+
+                {/* Facts are printed conditionally, if country has an unusual number of capitals*/}
                 { data.capital==null &&
                   <h4> Did you know that {data.name.common} does not have a capital?</h4>
                 }
@@ -74,6 +94,7 @@ function App() {
                   <h4> Did you know that {data.name.common} has 3 capital cities?
                   These are: {data.capital[0]}, {data.capital[1]} and {data.capital[2]}!</h4>
                 }
+                
                 <h4>{data.name.common} is {data.independent ? "an independent " : "a non-independent "} 
                     nation with a population of {data.population}.</h4>
                 <h4>{data.name.common} is in the {data.subregion} subregion of {data.region}.</h4>
